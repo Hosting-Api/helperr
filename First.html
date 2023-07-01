@@ -1,0 +1,137 @@
+<HTML>
+     <HEAD><TITLE>Employee Registration</TITLE>
+	<script>
+	function validation()
+{
+	var x=document.registration.FirstName.value;
+	var y=document.registration.MiddleName.value;
+	var z=document.registration.LastName.value;
+	var a=document.registration.Email.value;
+	var b=document.registration.Password.value;
+	var c=document.registration.Repassword.value;
+	if(b!=c){
+		alert("YOUR PASSWORD DOES NOT MATCH!!!")
+		document.registration.Password.focus;
+		document.registration.Repassword.focus;
+		return false;
+		}
+	if(x==null||x==""||y==null||y==""||z==null||z==""||b==null||b==""||c==null||c==""){
+		alert("EMPTY SPACE CANNOT BE REGISTERED!!!")
+		document.registration.FirstName.focus;
+		document.registration.MiddleName.focus;
+		document.registration.LastName.focus;
+		document.registration.Password.focus;
+		document.registration.Repassword.focus;
+		return false;
+		}
+}
+</script>
+</HEAD>
+     <BODY>
+     <FORM ACTION = "Registration.html"METHOD="POST" onsubmit="return validation()" name="registration"> 
+     <Center> <B> <U> <h1>Employee Registration </h1> 
+     <TABLE BORDER = "0" color="RED">
+     <TR>
+         <TD>First Name </TD>
+         <TD> &nbsp </TD>
+         <TD><INPUT TYPE="Textbox" name="FirstName" Value="" style="font-family:Courier"></TD>
+     </TR>
+      <TR>
+         <TD>Middle Name </TD>
+         <TD> &nbsp </TD>
+         <TD><INPUT TYPE="Textbox" Name="MiddleName" Value="" style="font-family:Courier"></TD>
+     </TR>
+      <TR>
+         <TD>Last Name </TD>
+         <TD> &nbsp </TD>
+         <TD><INPUT TYPE="Textbox" Name="LastName" Value="" style="font-family:Courier"></TD>
+     </TR>
+      <TR>
+         <TD>Contact </TD>
+         <TD> &nbsp </TD>
+         <TD><INPUT TYPE="Textbox" Name="Contact" Value="" style="font-family:Courier"></TD>
+     </TR>
+      <TR>
+         <TD>Email </TD>
+         <TD> &nbsp </TD>
+         <TD><INPUT TYPE="Textbox" Name="Email" Value="" style="font-family:Courier"></TD>
+     </TR>
+      <TR>
+         <TD>Gender </TD>
+         <TD> &nbsp </TD>
+         <TD><INPUT TYPE="radio" Name="Gender" Value="Male"Checked>Male
+         <TD><INPUT TYPE="radio" Name="Gender" Value="Female">Female
+         <TD><INPUT TYPE="radio" Name="Gender" Value="Other">Other</TD>
+     </TR>
+      <TR>
+         <TD>Hobbies </TD>
+         <TD> &nbsp </TD>
+         <TD><INPUT TYPE="checkbox" Name="Hobbies" Value="Research"Checked>Research
+         <TD><INPUT TYPE="checkbox" Name="Hobbies" Value="Games">Games
+         <TD><INPUT TYPE="checkbox" Name="Hobbies" Value="Hacking">Hacking
+     </TR>
+      <TR>
+         <TD>Address </TD>
+         <TD> &nbsp </TD>
+         <TD><textarea Name="Txtarea" rows="5" coln="70" style="font-family:Courier"> </textarea></TD>
+     </TR>
+      <TR>
+         <TD>City </TD>
+         <TD> &nbsp </TD>
+         <TD><Select name="city">
+             <option>Navsari</option>
+             <option>Surat</option>
+             <option>Vapi</option>
+             <option>Daman</option>
+             <option>Rajkot</option>
+             </Select>
+      </TR>
+       <TR>
+         <TD>Password </TD>
+         <TD> &nbsp </TD>
+         <TD><INPUT TYPE="password" Name="Password" Value="" id="typepass"><INPUT TYPE="checkbox" onclick="Togle()">Show </TD>
+      </TR>   
+       <TR>        
+     <script>
+            function Togle() {
+                var temp = document.getElementById("typepass");
+                if (temp.type === "password") {
+                    temp.type = "text";
+                }
+                else {
+                    temp.type = "password";
+                }
+
+            }
+    </script>
+     </TR>
+      <TR>
+         <TD>Re-password </TD>
+         <TD> &nbsp </TD>
+         <TD><INPUT TYPE="password" Name="Repassword" Value="" id="pass"><INPUT TYPE="checkbox" onclick="Toggle()">Show </TD>
+     </TR>
+      <TR>
+     <script>
+            function Toggle() {
+                var temp = document.getElementById("pass");
+                if (temp.type == "password") {
+                    temp.type = "text";
+                }
+                else {
+                    temp.type = "password";
+                }
+
+            }
+    </script>
+    </TR>
+     <TR>
+         <TD><INPUT TYPE="Submit" Name="Submit" Value="Submit"></TD>
+         <TD><INPUT TYPE="Reset" Name="Reset" Value="Reset"></TD>
+         <TD><INPUT TYPE="Reset" Name="Cancel" Value="Cancel"></TD>
+     </TR>
+
+     </B> </U>
+     </FORM>
+     </BODY>
+     </Center>
+</HTML>
